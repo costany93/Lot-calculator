@@ -155,12 +155,29 @@ body{
     width: 50%;
     border: none;
     border-radius: 5px;
-    background: #19A8F9;
+    background: linear-gradient(130deg, #02E1FF 9%, rgba(250, 0, 255, 0.32) 90%);
     color: #fff;
     cursor: pointer;
     height: 40px;
+    overflow: hidden;
 }
 #btn:active {
     width: 49%;
     height: 39px;
+}
+#btn::before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #06d6fa;
+    transition: width linear 0.3s;
+    z-index: -1;
+}
+#btn:hover::before {
+    width: 100%;
+    transition: width linear 0.3s;
 }
