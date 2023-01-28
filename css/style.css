@@ -160,6 +160,7 @@ body{
     cursor: pointer;
     height: 40px;
     overflow: hidden;
+    z-index: 1;
 }
 #btn:active {
     width: 49%;
@@ -179,5 +180,6 @@ body{
 }
 #btn:hover::before {
     width: 100%;
+    background: #06d6fa;
     transition: width linear 0.3s;
 }
