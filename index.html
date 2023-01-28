@@ -8,7 +8,52 @@
     <title>Calculateur de taille de position Boom et Crash</title>
 </head>
 <body>
-    <h1>Bienvenue</h1>
+    <div class="container">
+        <div class="main-container">
+            <h1>CALCULATEUR DE POSITION INDICES SYNTHETIQUES</h1>
+            <div class="left">
+                <span>Informations relatives à l’actif</span>
+                <div class="form-container">
+                    <form action="#" class="form">
+                        <div class="input-form">
+                            <select name="actif-select" id="actif-select" >
+                                <option value="">Selectionnez votre actif</option>
+                                <option value="boom300">Boom 300</option>
+                                <option value="boom500">Boom 500</option>
+                                <option value="boom1000">Boom 1000</option>
+                                <option value="crash300">Crash 300</option>
+                                <option value="crash500">Crash 500</option>
+                                <option value="crash1000">Crash 1000</option>
+    
+                            </select>
+                        </div>
+                        <div class="input-form">
+                            <input type="text" id="prix-entree" placeholder="Prix d’entrée">
+                        </div>
+                        <div class="input-form">
+                            <input type="text" id="prix-sl" placeholder="Prix du stop loss">
+                        </div>
+                        <div class="input-form">
+                            <input type="text" id="prix-tp" placeholder="Prix du take profit">
+                        </div>
+                        <div class="input-form">
+                            <input type="text" id="prix-perte" placeholder="Montant perte en $">
+                        </div>
+                        <button class="btn" id="btn">Estimer</button>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+                <span>Résultats relatif à l’actif : <b class="actif-text"></b> </span>
+                <span>Lot minimum de l’actif: <b class="lot-minimum"></b></span>
+                <span>Lot recommandé pour cette perte en $ : <b class="lot-recommande"></b></span>
+                <span>RRR de la postion: <b class="rrr"></b></span>
+            </div>
+        </div>
+        <div class="credit-container">
+            <h2>By Costany Kandza & Kani Bouebassihou</h2>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
