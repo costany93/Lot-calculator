@@ -32,24 +32,26 @@
                                     </select>
                                 </div>
                                 <div class="input-form">
-                                    <input type="text" id="prix-entree" placeholder="Prix d’entrée">
+                                    <input type="number" id="prix-entree" placeholder="Prix d’entrée" required>
                                 </div>
                                 <div class="input-form">
-                                    <input type="text" id="prix-sl" placeholder="Prix du stop loss">
+                                    <input type="number" id="prix-tp" placeholder="Prix du take profit" required>
                                 </div>
                                 <div class="input-form">
-                                    <input type="text" id="prix-tp" placeholder="Prix du take profit">
+                                    <input type="number" id="prix-sl" placeholder="Prix du stop loss" required>
                                 </div>
+                                
                                 <div class="input-form">
-                                    <input type="text" id="prix-perte" placeholder="Montant perte en $">
+                                    <input type="number" id="prix-perte" placeholder="Montant perte en $" required>
                                 </div>
-                                <button type="submit" class="btn" id="btn">Estimer</button>
+                                <button type="button" class="btn" id="btn">Estimer</button>
                             </form>
                         </div>
                     </div>
                     <div class="right">
                         <span>Résultats relatif à l’actif : <b class="actif-text"></b> </span>
                         <span>Lot minimum de l’actif: <b class="lot-minimum"></b></span>
+                        <span>Type d'ordre : <b class="type-ordre"></b> </span>
                         <span>Lot recommandé pour cette perte en $ : <b class="lot-recommande"></b></span>
                         <span>RRR de la postion: <b class="rrr"></b></span>
                     </div>
