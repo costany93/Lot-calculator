@@ -2,6 +2,7 @@ let actifSelect = document.getElementById("actif-select")
 
 let actifText  = document.querySelector(".actif-text")
 
+//definition des textes 
 let actifLotMinimum = document.querySelector(".lot-minimum")
 let actifLotRecommande = document.querySelector(".lot-recommande")
 let actifRrr = document.querySelector(".rrr")
@@ -19,6 +20,8 @@ let montantPerteInput = document.getElementById("prix-perte")
 let inputNumber = document.querySelector('.form .input-form input')
 
 console.log(prixSlInput)
+
+
 //ecoutons la fonction onclick sur le button
 btn.addEventListener('click', () => {
     let prixEntreeText = "no";
@@ -62,7 +65,7 @@ btn.addEventListener('click', () => {
 
     }
 
-    //vérifions nos valeurs de champs et ajoutons des default texte au cas ou ceux ci sont vide
+    //vérifions nos valeurs de champs input et ajoutons des default texte au cas ou ceux ci sont vide
     if(prixEntreeText == "no" || prixSlText == "no" || prixTpText == "no" || montantPerteText == "no"){
         actifLotRecommande.innerHTML = "0"
         actifRrr.innerHTML = "0"
