@@ -2,7 +2,7 @@ let actifSelect = document.getElementById("actif-select")
 
 let actifText  = document.querySelector(".actif-text")
 
-//definition des textes 
+//definition des textes relatifs à l'actif
 let actifLotMinimum = document.querySelector(".lot-minimum")
 let actifLotRecommande = document.querySelector(".lot-recommande")
 let actifRrr = document.querySelector(".rrr")
