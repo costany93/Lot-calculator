@@ -19,8 +19,10 @@ let montantPerteInput = document.getElementById("prix-perte")
 
 let inputNumber = document.querySelector('.form .input-form input')
 
-console.log(prixSlInput)
+//console.log(prixSlInput)
 
+
+let selection = actifSelect.value
 
 //ecoutons la fonction onclick sur le button
 btn.addEventListener('click', () => {
@@ -28,6 +30,7 @@ btn.addEventListener('click', () => {
     let prixSlText = "no";
     let prixTpText ="no";
     let montantPerteText = "no";
+    let valueActifName = actifSelect.value
     //vérifier les champs et ajouter les bordures bottom red
     //prix entree
     if(prixEntreeInput.value == ""){
@@ -75,19 +78,68 @@ btn.addEventListener('click', () => {
         let slPricePercentage = (prixEntreeText - prixSlText) * 10000
         let rrrValue = tpPricePercentage / slPricePercentage
 
+        // calculons le nom de pips
+        let nbrePips = Math.abs(prixEntreeText - prixSlText)
+
         //calculons le lot recommandé
         let lotRecommande = montantPerteText / (prixEntreeText - prixSlText).toFixed(2)
-
+        let lotRecommandeInt = Math.abs(lotRecommande.toFixed(2))
+        //vérifions l'actif et affectons le lot minimum en cas de besoin
+        //boom300
+        if(valueActifName == "boom300" && lotRecommande < 0.1){
+            let newLotRecommande = nbrePips * 0.1
+            actifLotRecommande.innerHTML =  "votre perte sur cette distance sera de "+newLotRecommande
+        }else{
+            actifLotRecommande.innerHTML = lotRecommandeInt
+        }
+        /*
+        //boom500
+        if(valueActifName == "boom500" && lotRecommande < 0.2){
+            let newLotRecommande = nbrePips * 0.2
+            actifLotRecommande.innerHTML =  "votre perte sur cette distance sera de "+newLotRecommande
+        }else{
+            actifLotRecommande.innerHTML = lotRecommandeInt
+        }
+        //boom1000
+        if(valueActifName == "boom1000" && lotRecommande < 0.2){
+            let newLotRecommande = nbrePips * 0.2
+            actifLotRecommande.innerHTML =  "votre perte sur cette distance sera de "+newLotRecommande
+        }else{
+            actifLotRecommande.innerHTML = lotRecommandeInt
+        }
+        //crash300
+        if(valueActifName == "crash300" && lotRecommande < 0.05){
+            let newLotRecommande = nbrePips * 0.05
+            actifLotRecommande.innerHTML =  "votre perte sur cette distance sera de "+newLotRecommande
+        }else{
+            actifLotRecommande.innerHTML = lotRecommandeInt
+        }
+        //crash500
+        if(valueActifName == "crash300" && lotRecommande < 0.2){
+            let newLotRecommande = nbrePips * 0.2
+            actifLotRecommande.innerHTML =  "votre perte sur cette distance sera de "+newLotRecommande
+        }else{
+            actifLotRecommande.innerHTML = lotRecommandeInt
+        }
+        //crash1000
+        if(valueActifName == "crash300" && lotRecommande < 0.2){
+            let newLotRecommande = nbrePips * 0.2
+            actifLotRecommande.innerHTML =  "votre perte sur cette distance sera de "+newLotRecommande
+        }else{
+            actifLotRecommande.innerHTML = lotRecommandeInt
+        }*/
+        //definiton du  type d'ordre
         let typeOrder = buyOrSell(prixEntreeText, prixTpText, prixSlText)
-        actifLotRecommande.innerHTML = lotRecommande.toFixed(2)
+        //actifLotRecommande.innerHTML = Math.abs(lotRecommande.toFixed(2))
         actifRrr.innerHTML = rrrValue.toFixed(2)
         actifTypeOrdre.innerHTML = typeOrder
     }
-    
+    console.log(valueActifName)
     console.log(prixEntreeText)
     console.log(prixSlText)
     console.log(prixTpText)
     console.log(montantPerteText)
+    
     /*console.log(prixEntreeInput.value)
     console.log(prixSlInput.value)
     console.log(prixTpInput.value)
